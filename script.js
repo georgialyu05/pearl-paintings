@@ -95,14 +95,14 @@ function draw() {
   // so pearls stay on the necklace at any viewport size
   const imgScale   = Math.max(W / NECK_W, H / NECK_H);
   const imgOffsetX = (W - NECK_W * imgScale) / 2;
-  const baseRadius = NECK_W * imgScale * 0.006;
+  const baseRadius = NECK_W * imgScale * 0.012;
   const time = Date.now() * 0.001;
 
   for (let i = 0; i < PEARL_COUNT; i++) {
     const t = ((i / PEARL_COUNT) + offset) % 1;
     const point = pathEl.getPointAtLength(t * totalLength);
-    const x = (point.x * (NECK_W / PATH_W) + NECK_W * 0.30) * imgScale + imgOffsetX;
-    const y = (point.y * (NECK_H / PATH_H) + NECK_H * 0.325) * imgScale;
+    const x = (point.x * (NECK_W / PATH_W) + NECK_W * 0.3) * imgScale + imgOffsetX;
+    const y = (point.y * (NECK_H / PATH_H*0.9) + NECK_H * 0.27) * imgScale;
     pearlPositions[i] = { x, y, r: baseRadius * 1.1 };
     drawPearl(x, y, baseRadius, time);
   }
