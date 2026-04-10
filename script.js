@@ -21,7 +21,7 @@ pathEl.setAttribute('d', `M25.0856 74.7451L35.1257 62.0113C36.7061 60.0069 38.12
 
 const PATH_W = 1280;
 const PATH_H = 800;
-const NECK_W = 3024;   // neck.png natural dimensions
+const NECK_W = 3024;
 const NECK_H = 1964;
 const totalLength = pathEl.getTotalLength();
 const PEARL_COUNT = 32;
@@ -91,12 +91,12 @@ function draw() {
 
   const W = canvas.width;
   const H = canvas.height;
-  const time = Date.now() * 0.001;
-
-  // Match neck image's object-fit:cover transform so pearls always track the necklace
-  const imgScale  = Math.max(W / NECK_W, H / NECK_H);
+  // Use the same uniform scale as neck image's object-fit:cover
+  // so pearls stay on the necklace at any viewport size
+  const imgScale   = Math.max(W / NECK_W, H / NECK_H);
   const imgOffsetX = (W - NECK_W * imgScale) / 2;
   const baseRadius = NECK_W * imgScale * 0.006;
+  const time = Date.now() * 0.001;
 
   for (let i = 0; i < PEARL_COUNT; i++) {
     const t = ((i / PEARL_COUNT) + offset) % 1;
