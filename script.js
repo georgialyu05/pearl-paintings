@@ -5,15 +5,15 @@ const hoverCard = document.getElementById('hover-card');
 const threadPath = document.getElementById('thread-path');
 
 const paintings = [
-    { title: "Girl with a Pearl Earring",            artist: "Johannes Vermeer",       year: "c. 1665", img: "/public/1.jpg", cardBg: "#50a1da", wiki: "https://en.wikipedia.org/wiki/Girl_with_a_Pearl_Earring" },
-    { title: "Woman with a Pearl Necklace",           artist: "Johannes Vermeer",       year: "c. 1664", img: "/public/2.jpg", cardBg: "#9ae4a7", wiki: "https://en.wikipedia.org/wiki/Woman_with_a_Pearl_Necklace" },
-    { title: "The Infanta Maria Theresa of Spain",    artist: "Diego Velázquez",        year: "c. 1653", img: "/public/3.jpg", cardBg: "#eec924", wiki: "https://en.wikipedia.org/wiki/The_Infanta_Maria_Theresa_of_Spain" },
-    { title: "Woman with a Pearl Necklace in a Loge", artist: "Mary Cassatt",          year: "c. 1879", img: "/public/4.jpg", cardBg: "#efaeb0", wiki: "https://en.wikipedia.org/wiki/Woman_with_a_Pearl_Necklace_in_a_Loge" },
-    { title: "Portrait of Adele Bloch-Bauer I",      artist: "Gustav Klimt",           year: "c. 1903", img: "/public/5.jpg", cardBg: "#9185d4", wiki: "https://en.wikipedia.org/wiki/Portrait_of_Adele_Bloch-Bauer_I" },
-    { title: "Judith with the Head of Holofernes",   artist: "Titian",                 year: "c. 1570", img: "/public/6.jpg", cardBg: "#f13a3a", wiki: "https://en.wikipedia.org/wiki/Judith_with_the_Head_of_Holofernes_(Titian)" },
-    { title: "Marquise of Pompadour",                artist: "Charles-André van Loo",  year: "c. 1755", img: "/public/7.jpg", cardBg: "#94b9df", wiki: "https://en.wikipedia.org/wiki/Madame_de_Pompadour" },
-    { title: "La Loge",                              artist: "Pierre-Auguste Renoir",  year: "c. 1874", img: "/public/8.jpg", cardBg: "#f01267", wiki: "https://en.wikipedia.org/wiki/La_Loge" },
-    { title: "Venus Consoling Love",                    artist: "François Boucher",       year: "c. 1751", img: "/public/9.jpg", cardBg: "#0dbfb0", wiki: "https://en.wikipedia.org/wiki/Venus_Consoling_Love" },
+    { title: "Girl with a Pearl Earring",            artist: "Johannes Vermeer",       year: "c. 1665", img: "public/1.jpg", cardBg: "#50a1da", wiki: "https://en.wikipedia.org/wiki/Girl_with_a_Pearl_Earring" },
+    { title: "Woman with a Pearl Necklace",           artist: "Johannes Vermeer",       year: "c. 1664", img: "public/2.jpg", cardBg: "#9ae4a7", wiki: "https://en.wikipedia.org/wiki/Woman_with_a_Pearl_Necklace" },
+    { title: "The Infanta Maria Theresa of Spain",    artist: "Diego Velázquez",        year: "c. 1653", img: "public/3.jpg", cardBg: "#eec924", wiki: "https://en.wikipedia.org/wiki/The_Infanta_Maria_Theresa_of_Spain" },
+    { title: "Woman with a Pearl Necklace in a Loge", artist: "Mary Cassatt",          year: "c. 1879", img: "public/4.jpg", cardBg: "#efaeb0", wiki: "https://en.wikipedia.org/wiki/Woman_with_a_Pearl_Necklace_in_a_Loge" },
+    { title: "Portrait of Adele Bloch-Bauer I",      artist: "Gustav Klimt",           year: "c. 1903", img: "public/5.jpg", cardBg: "#9185d4", wiki: "https://en.wikipedia.org/wiki/Portrait_of_Adele_Bloch-Bauer_I" },
+    { title: "Judith with the Head of Holofernes",   artist: "Titian",                 year: "c. 1570", img: "public/6.jpg", cardBg: "#f13a3a", wiki: "https://en.wikipedia.org/wiki/Judith_with_the_Head_of_Holofernes_(Titian)" },
+    { title: "Marquise of Pompadour",                artist: "Charles-André van Loo",  year: "c. 1755", img: "public/7.jpg", cardBg: "#94b9df", wiki: "https://en.wikipedia.org/wiki/Madame_de_Pompadour" },
+    { title: "La Loge",                              artist: "Pierre-Auguste Renoir",  year: "c. 1874", img: "public/8.jpg", cardBg: "#f01267", wiki: "https://en.wikipedia.org/wiki/La_Loge" },
+    { title: "Venus Consoling Love",                    artist: "François Boucher",       year: "c. 1751", img: "public/9.jpg", cardBg: "#0dbfb0", wiki: "https://en.wikipedia.org/wiki/Venus_Consoling_Love" },
 ];
 
 const pathEl = document.createElementNS('http://www.w3.org/2000/svg', 'path');
