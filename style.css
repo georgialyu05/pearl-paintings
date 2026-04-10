@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#scene {
+  min-width: 1440px;
+  max-width: 1728px;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+#bg, #neck {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+#bg-blur {
+  position: absolute;
+  inset: -2px;
+  background: url('./public/bg.jpg') center top / cover no-repeat;
+  filter: blur(5px);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 20%, black 62%);
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 20%, black 62%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+#bg-blur.active {
+  opacity: 1;
+}
+
+#pearls {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#neck {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  pointer-events: none;
+  z-index: 10;
+  -webkit-mask-image: radial-gradient(ellipse 60% 70% at 50% 40%, black 50%, transparent 100%);
+  mask-image: radial-gradient(ellipse 60% 70% at 50% 40%, black 50%, transparent 100%);
+}
+
+#thread-svg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 60;
+}
+
+#thread-path {
+  stroke: rgba(210, 185, 130, 0.55);
+  stroke-width: 1px;
+  stroke-dasharray: 4 4;
+}
+
+#hover-card {
+  position: fixed;
+  right: 48px;
+  top: 50%;
+  transform: translateY(-50%) translateX(calc(100% + 60px));
+  z-index: 70;
+  width: 300px;
+  background: var(--card-bg, rgba(255,255,255,0.18));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 14px;
+  padding: 16px 10px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform 0.55s cubic-bezier(0.34, 1.4, 0.64, 1),
+    opacity 0.4s ease,
+    background 0.4s ease;
+}
+
+#hover-card.visible {
+  transform: translateY(-50%) translateX(0);
+  opacity: 1;
+}
+
+#hover-frame {
+  width: 100%;
+  border-radius: 7px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  aspect-ratio: 4/5;
+}
+
+#hover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#hover-title {
+  font-family: -apple-system, "SF Pro Display", "SF Pro Text", sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+  color: #191919;
+  text-align: center;
+}
+
+#hover-info {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+#hover-artist {
+  font-family: -apple-system, "SF Pro Text", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #191919;
+  display: inline;
+}
+
+#hover-artist::after {
+  content: " · ";
+  color: #191919;
+}
+
+#hover-year {
+  font-family: -apple-system, "SF Pro Text", sans-serif;
+  font-size: 12px;
+  color: #191919;
+  letter-spacing: 0.08em;
+  display: inline;
+}
